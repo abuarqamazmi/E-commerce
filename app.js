@@ -16,7 +16,8 @@ const User = require('./model/User'); //pass
 const cartRoutes=require('./routes/cart');
 const dotenv=require('dotenv').config();
 mongoose.set('strictQuery', true);
-mongoose.connect(process.env.MONGO_URL)
+const uri=process.env.ATLAS_URL;
+mongoose.connect(uri)
 .then(()=>{
     console.log("DB is connected...");
 })
